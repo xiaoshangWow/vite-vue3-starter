@@ -7,7 +7,8 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     'airbnb-base',
-    'plugin:prettier/recommended' // 添加prettier插件
+    'plugin:prettier/recommended', // 添加prettier插件
+    'plugin:jest/recommended' // 添加jest插件
   ],
   parserOptions: {
     ecmaVersion: 12,
