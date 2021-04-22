@@ -8,10 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - users: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Setup Node.js v14.x
-        users: actions/setup-node@v1
+        uses: actions/setup-node@v1
         with:
           node-version: '14.x'
 
@@ -22,7 +22,7 @@ jobs:
         run: npm run build # 打包
 
       - name: Deploy
-        users: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 actions
+        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 actions
         with:
           publish_dir: ./dist # 部署打包后的 dist 目录
           github_token: ${{ secrets.VUE3_DEPLOY }} # secret 名
